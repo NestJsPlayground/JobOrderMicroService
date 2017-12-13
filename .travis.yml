@@ -14,7 +14,7 @@ cache:
   - $HOME/.m2
 
 env:
-  - DOCKER_IMAGE=jmezna/rso-orders:0.14
+  - DOCKER_IMAGE=tilen/job-orders
 
 script:
   - mvn clean package -U
