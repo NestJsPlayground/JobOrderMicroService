@@ -2,7 +2,6 @@ package si.fri.rso.samples.orders.api.v1.resources;
 
 import com.kumuluz.ee.logs.cdi.Log;
 import org.eclipse.microprofile.metrics.annotation.Metered;
-import si.fri.rso.samples.orders.Order;
 import si.fri.rso.samples.orders.services.OrdersBean;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -14,6 +13,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.util.ArrayList;
 import java.util.List;
+
 
 @ApplicationScoped
 @Path("/orders")
