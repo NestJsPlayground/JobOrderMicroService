@@ -34,7 +34,7 @@ public class OrdersConsumer {
 
         log.info("Status for order " + id + " set to " + status);
 
-        ordersBean.setOrderStatus(id, status);
+
 
     }
 

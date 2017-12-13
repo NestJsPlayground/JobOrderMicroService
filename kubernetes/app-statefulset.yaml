@@ -1,36 +1,23 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: apiseed
+  name: joborders
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: apiseed
+        app: joborders
         tier: frontend
     spec:
       containers:
-      - image: tilen/nestjs-seed
-        name: apiseed
+      - image: tilen/job-orders
+        name: joborders
         ports:
-        - containerPort: 3000
+        - containerPort: 8081
           name: server
           protocol: TCP
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 3000
-          initialDelaySeconds: 10
-          periodSeconds: 10
         env:
-          - name: MONGO_HOST
-            valueFrom:
-              secretKeyRef:
-                name: mongo-db-secret-watch
-                key: connstring.txt
-          - name: NODE_ENV
-            value: "prod"
           - name: VERSION
             value: "4"
           - name: LOGSTASH_HOST

@@ -13,7 +13,6 @@
     <modules>
         <module>api</module>
         <module>services</module>
-        <module>models</module>
     </modules>
 
     <properties>
@@ -30,7 +29,6 @@
         <kumuluzee-streaming.version>1.0.0-SNAPSHOT</kumuluzee-streaming.version>
         <kumuluzee-logs.versio>1.3.0</kumuluzee-logs.versio>
 
-        <postgresql.version>42.1.4</postgresql.version>
     </properties>
 
     <repositories>
@@ -98,11 +96,7 @@
                 <version>${kumuluzee-logs.version}</version>
             </dependency>
 
-            <dependency>
-                <groupId>org.postgresql</groupId>
-                <artifactId>postgresql</artifactId>
-                <version>${postgresql.version}</version>
-            </dependency>
+
 
             <dependency>
                 <groupId>si.fri.rso.samples</groupId>
