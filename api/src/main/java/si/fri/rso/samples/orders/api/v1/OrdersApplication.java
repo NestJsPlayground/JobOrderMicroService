@@ -6,6 +6,6 @@ import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
 @ApplicationPath("/v1")
-@RegisterService
+@RegisterService(value = "rso-order", ttl = 20, pingInterval = 15)
 public class OrdersApplication extends Application {
 }
