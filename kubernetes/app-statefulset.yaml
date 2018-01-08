@@ -1,24 +1,27 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: joborders
+  name: rso-job
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: joborders
-        tier: frontend
+        app: rso-job
     spec:
       containers:
-      - image: tilen/job-orders
-        name: joborders
+      - image: tilen/rso-job
+        name: rsoapiseed
         ports:
-        - containerPort: 8081
+        - containerPort: 3000
           name: server
           protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8081
+          initialDelaySeconds: 10
+          periodSeconds: 10
         env:
-          - name: VERSION
-            value: "4"
-          - name: LOGSTASH_HOST
-            value: "log.tomakic.com"
+          - name: DEPLOY_VERSION
+            value: "%DEPLOY_VERSION%"
