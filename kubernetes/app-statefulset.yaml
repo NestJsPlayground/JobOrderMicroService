@@ -1,19 +1,19 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: rso-job
+  name: rso-order
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: rso-job
+        app: rso-order
     spec:
       containers:
-      - image: tilen/rso-job
+      - image: tilen/rso-order
         name: rsoapiseed
         ports:
-        - containerPort: 3000
+        - containerPort: 8081
           name: server
           protocol: TCP
         livenessProbe:
