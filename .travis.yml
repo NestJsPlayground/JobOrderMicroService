@@ -14,7 +14,7 @@ cache:
   - $HOME/.m2
 
 env:
-  - DOCKER_IMAGE=tilen/job-orders
+  - DOCKER_IMAGE=tilen/job-order
 
 script:
   - mvn clean package -U
